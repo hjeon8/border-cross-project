@@ -1,15 +1,11 @@
-
 function initializeViz() {
-    var placeholderDiv = document.getElementById("vizContainer");
-    var url = "https://public.tableau.com/views/Border_Heatmap";
+    var placeholderDiv = document.getElementById("borderheat");
+    var url = "https://public.tableau.com/views/BorderCrossingCountbyState2008-2018/Sheet1";
     var options = {
-      width: placeholderDiv.offsetWidth,
-      height: placeholderDiv.offsetHeight,
-      hideTabs: true,
-      hideToolbar: true,
-      onFirstInteractive: function () {
-        workbook = viz.getWorkbook();
-        activeSheet = workbook.getActiveSheet();
+		width: '600px',
+		height: '600px',
+		hideTabs: true,
+		hideToolbar: true,
       }
     };
     viz = new tableau.Viz(placeholderDiv, url, options);
