@@ -1,5 +1,5 @@
 Plotly.d3.csv(
-    "https://raw.githubusercontent.com/RHaile/final_project/master/data/value_prediction.csv", function (err, rows) {
+    "https://raw.githubusercontent.com/hjeon8/border-cross-project/master/data/value_prediction.csv", function (err, rows) {
       function unpack(rows, key) {
         return rows.map(function (row) {
           return row[key];
