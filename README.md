@@ -31,6 +31,7 @@ Border Crossing Entry Data https://www.kaggle.com/akhilv11/border-crossing-entry
 * Matplotlib
 * Plotly
 * Python
+* Seaborn
 * Tableau
 
 ## Model
