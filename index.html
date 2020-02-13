@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
-    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 </head>
 
 <body>
@@ -19,7 +22,7 @@
             <a href="#heatmap" class="w3-bar-item w3-button">HEATMAP</a>
             <a href="#chart" class="w3-bar-item w3-button">PIE CHART</a>
             <a href="#count" class="w3-bar-item w3-button">BORDER COUNT</a>
-            <a href="#growth" class="w3-bar-item w3-button">GDP GROWTH</a>
+            <a href="#reason" class="w3-bar-item w3-button">REASON</a>
             <a href="#predict" class="w3-bar-item w3-button">PREDICTION</a>
             <a href="#code" class="w3-bar-item w3-button">CODE</a>
         </div>
@@ -43,6 +46,7 @@
         <div class="w3-content">
             <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">HeatMap</h1>
             <!-- <div id="vizContainer" style="width:800px; height:700px;"></div> -->
+			<p>Here is heatmap of border cross count between 2008 and 2018. Darker color shows more amount of crossing. This map shows more amount of crossing for US-Mexico than US-Canada border.</p>
             <div class='tableauPlaceholder' id='viz1581191362881' style='position: center'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BorderCrossingCountbyState2008-2018&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='BorderCrossingCountbyState2008-2018&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;BorderCrossingCountbyState2008-2018&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1581191362881');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1000px';vizElement.style.height='700px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         </div>
     </div>
@@ -52,8 +56,11 @@
         <div class="w3-content">
             <h1 class="w3-center w3-jumbo" style="color:black; margin-bottom:64px">Border Crossing Pie Chart</h1>
 
-            <div id="myDiv2" style="position: relative; width: 600px; height: 400px;"></div>
-
+            <!-- <div id="myDiv2" style="position: relative; width: 600px; height: 400px;"></div> -->
+            <div id="chartdiv" style="width: 100%; height: 500px;"></div>
+			<p>This is a border crossing pie chart for by US-Canada and US-Mexico border. <br>
+			As you see, US-Mexico border crossing has more portion(71.9%) for crossing than US-Canada border. <br>
+			When you click left pie chart, it shows percentage of State. Texas has been used 50% of border crossing between US and Mexico.</p>
         </div>
     </div>
 
@@ -62,23 +69,38 @@
         <div class="w3-content">
             <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Border Count</h1>
             <div id="myDiv1"></div>
+			<p>Here is border crossing total count by year and month between 2008-2018. Overall border crossing amount suddenly decreased around 2008 when the stock market crash and it recovers gradually until now.<br>
+			Interestingly, it shows similar pattern by each year. February is the lowest and July or August is the highest number of border crossing.<br>The possible reason of the pattern in this graph will be explained by clicking below button.</p>
+			<p><a href="#reason" class="w3-center w3-button w3-xxlarge w3-white">WHAT'S THE REASON?</a></p>
         </div>
     </div>
 
+
+       
     <!-- GDP Growth -->
-    <div class="w3-container w3-padding-64 w3-white w3-xlarge" id="growth">
+    <div class="w3-container w3-padding-64 w3-white w3-xlarge" id="reason">
         <div class="w3-content">
-            <h1 class="w3-center w3-jumbo" style="color:black; margin-bottom:64px">GDP Growth</h1>
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <h1 class="w3-center w3-jumbo" style="color:black; margin-bottom:64px">Reason behind pattern</h1>
+              <img src="../static/images/reasonbehind_graph.png" style="height: 400px; width: 600px;" alt="Travel to US graph" class="w3-center">
+			<p>Above graph is number of travel from Canada and Mexico to the US. <br>
+			While analyzing by measure of crossing, personal vehicle got affected by month more than any other measures and it has highest number of crossing among all measures.
+			Since personal vehicle is highest measure for border crossing, there was a hypothesis that it might be related to travel/tourism.<br>
+			As a result, February has the lowest volume of travel and August has the highest volume. Therefore, there is high possibility border crossing amount is affected by volume of travel. </p>
 
         </div>
     </div>
+
 
     <div class="w3-container w3-padding-64 w3-black w3-xlarge" id="predict">
         <div class="w3-content">
             <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Border Crossing Prediction</h1>
             <div id="myDiv3"></div>
-
+			
+			<p>I can say this is a solid model based on Recurrent Neural Network architecture by showing 0.91 of adjusted R-square. <br>
+			I trained the model with data 2008 to 2016 and tested a model with 2017-2018 border crossing data. <br>
+			Features used are port, border, date and measure. <br>
+			Red line is what has been predicted based on the machine learning model. Gray line is actual value of border crossing.<br>
+			As seen, I expect it will show as almost same pattern as past data but go upward yearly.</p>
         </div>
     </div>
 
@@ -88,10 +110,12 @@
             <h1 class="w3-center w3-jumbo" style="color:black; margin-bottom:64px">Code</h1>
             <div class="row">
                 <div class="column">
-                    <img src="static/images/border_model.png" style="height: 400px; width: 600px;"alt="Border Model">
+                    <img src="../static/images/border_model.png" style="height: 400px; width: 600px;"
+                        alt="Border Model">
                 </div>
                 <div class="column">
-                    <img src="static/images/neural_network.png" style="height: 400px; width: 600px;"alt="Neural Network">
+                    <img src="../static/images/neural_network.png" style="height: 400px; width: 600px;"
+                        alt="Neural Network">
                 </div>
             </div>
         </div>
@@ -122,10 +146,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="static/js/border_donut.js"></script>
-    <script src="static/js/border_count.js"></script>
-    <script src="static/js/gdp_lines.js"></script>
-    <script src="static/js/prediction.js"></script>
+    <!-- <script src="../static/js/border_donut.js"></script> -->
+    <script src="../static/js/pie_in_pie.js"></script>
+    <script src="../static/js/border_count.js"></script>
+    <script src="../static/js/gdp_lines.js"></script>
+    <script src="../static/js/prediction.js"></script>
 
 
 </body>
