@@ -1,5 +1,5 @@
 Plotly.d3.csv(
-    "https://raw.githubusercontent.com/hjeon8/border-cross-project/master/data/value_prediction.csv", function (err, rows) {
+    "https://raw.githubusercontent.com/RHaile/final_project/master/data/value_prediction.csv", function (err, rows) {
       function unpack(rows, key) {
         return rows.map(function (row) {
           return row[key];
@@ -23,7 +23,11 @@ var data = [trace1];
 var layout = {
   title: 'Border Cross Count by Month and Year',
   xaxis: {
-    tickformat: '%Y-%m'
+    title: 'Year-Month',
+	tickformat: '%Y-%m'
+  },
+  yaxis: {
+	title: 'Border Crossing Count'
   }
 };
 
